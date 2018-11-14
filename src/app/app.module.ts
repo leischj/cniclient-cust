@@ -10,12 +10,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CustomMaterialModule } from './core/material.module';
+import { AccountOverviewComponent } from './account-overview/account-overview.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
+import { BalanceComponent } from './balance/balance.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
-    LoginComponent
+    LoginComponent,
+    AccountOverviewComponent,
+    AccountDetailsComponent,
+    BalanceComponent
   ],
   imports: [
     BrowserModule,

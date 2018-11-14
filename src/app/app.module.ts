@@ -8,6 +8,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { CustomerService } from './customer.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { CustomMaterialModule } from './core/material.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,11 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    CustomMaterialModule,
+    FormsModule
   ],
   providers: [
     CustomerService

@@ -13,7 +13,12 @@ export class CustomerService {
   public mockCust: Customer = {
     custNum: 11,
     firstName: 'Joe',
-    lastName: 'Smith'
+    lastName: 'Smith',
+    billAddress1: '101 Main St',
+    billCity: 'El Paso',
+    billState: 'TX',
+    billZip: '40353',
+    email: 'smith.joe.99999@gmail.com',
   };
   constructor(public http: HttpClient) { }
 

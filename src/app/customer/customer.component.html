@@ -43,7 +43,7 @@
         <div *ngIf="customer.billAddress2 != null">{{customer?.billAddress2}}</div>
         <div>{{customer?.billCity}}, {{customer?.billState}} {{customer.billZip}}</div>
       </div>
-      <div id="header_bill" class="vertical-flex centered bordered">
+      <div (click)="view('bill')" id="header_bill" class="vertical-flex centered bordered">
         <div>Amount Due:</div>
         <div [ngClass]="{'red': customer.pastDue > 0}" class="emphasized price">{{customer?.totalDue | currency}}</div>
         <div *ngIf="customer.pastDue > 0">Past due</div>

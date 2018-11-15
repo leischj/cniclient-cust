@@ -23,7 +23,7 @@ export class CustomerService {
     pastDue: 0,
     currentDue: 0,
     totalDue: 0,
-    lastDate: new Date()
+    lateDate: new Date()
   };
   constructor(public http: HttpClient) { }
 

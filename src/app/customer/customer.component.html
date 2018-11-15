@@ -47,7 +47,7 @@
         <div>Amount Due:</div>
         <div [ngClass]="{'red': customer.pastDue > 0}" class="emphasized">$ {{customer?.totalDue}}</div>
         <div *ngIf="customer.pastDue > 0">Past due</div>
-        <div *ngIf="customer.totalDue == 0">Paid in full</div>
+        <div *ngIf="customer.totalDue == 0">Paid - Thank you!</div>
         <div *ngIf="customer.pastDue == 0 && customer.totalDue > 0">
           Due {{customer?.lastDate | date: 'M/dd/yyyy'}}</div>
       </div>

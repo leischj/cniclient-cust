@@ -21,16 +21,16 @@ export class CustomerService {
     billZip: '40353',
     email: 'smith.joe.99999@gmail.com',
     pastDue: 0,
-    currentDue: 12.45,
-    totalDue: 12.45,
+    currentDue: 0,
+    totalDue: 0,
     lastDate: new Date()
   };
   constructor(public http: HttpClient) { }
 
   getCustomer(id: number): Observable<Customer> {
     // TODO: Externalize API addresses
-    return of(this.mockCust);
-    // const address = 'http://localhost:25598/api/Customers/' + id;
-    // return this.http.get(address).pipe(map((response: any) => response));
+    // return of(this.mockCust);
+    const address = 'http://localhost:25598/api/Customers/' + id;
+    return this.http.get(address).pipe(map((response: any) => response));
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Customer} from '../model/customer';
 
 @Component({
@@ -15,7 +15,8 @@ export class CustomerComponent implements OnInit {
   public content = 'acct';
 
   constructor(public customerService: CustomerService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              public router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -30,5 +31,9 @@ export class CustomerComponent implements OnInit {
 
   view(page: string) {
     this.content = page;
+  }
+
+  logout() {
+    this.router.navigate(['login']);
   }
 }

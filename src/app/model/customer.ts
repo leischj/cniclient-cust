@@ -24,7 +24,7 @@ export interface Customer {
     totalDue?: number;
     budgetPymtAmt?: number;
     draftActive?: string;
-    lastDate?: Date;
+    lateDate?: Date;
     email?: string;
     password?: string;
 }

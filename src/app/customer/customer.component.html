@@ -49,7 +49,7 @@
         <div *ngIf="customer.pastDue > 0">Past due</div>
         <div *ngIf="customer.totalDue == 0">Paid - Thank you!</div>
         <div *ngIf="customer.pastDue == 0 && customer.totalDue > 0">
-          Due {{customer?.lastDate | date: 'M/dd/yyyy'}}</div>
+          Due {{customer?.lateDate | date: 'M/dd/yyyy'}}</div>
       </div>
       <div class="icon_action logout" (click)="logout()">
         <div class="horizontal-flex centered"><mat-icon>exit_to_app</mat-icon></div>

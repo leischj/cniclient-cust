@@ -22,4 +22,7 @@ export class TransactionsComponent implements OnInit {
     });
   }
 
+  print() {
+    alert('This feature is coming soon!');
+  }
 }

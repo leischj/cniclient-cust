@@ -22,4 +22,10 @@ export class LoginComponent implements OnInit {
 
     }
   }
+
+  keyDownFunction(event: any) {
+    if (event.keyCode === 13) {
+      this.router.navigate(['customer', this.custNum]);
+    }
+  }
 }

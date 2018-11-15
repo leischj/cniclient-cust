@@ -29,8 +29,8 @@ export class CustomerService {
 
   getCustomer(id: number): Observable<Customer> {
     // TODO: Externalize API addresses
-    // return of(this.mockCust);
-    const address = 'http://localhost:25598/api/Customers/' + id;
-    return this.http.get(address).pipe(map((response: any) => response));
+    return of(this.mockCust);
+    // const address = 'http://localhost:25598/api/Customers/' + id;
+    // return this.http.get(address).pipe(map((response: any) => response));
   }
 }

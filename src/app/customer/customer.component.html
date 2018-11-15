@@ -59,15 +59,13 @@
     </div>
     <div id="main-content">
       <div *ngIf="content == 'acct'" id="acct-content">
-        {{content}}
-        <app-account-overview></app-account-overview>
-
+        <app-account-overview [customer]="customer"></app-account-overview>
       </div>
       <div *ngIf="content == 'transactions'" id="transactions-content">
         {{content}}
       </div>
       <div *ngIf="content == 'bill'" id="bill-content">
-        {{content}}
+        <app-balance></app-balance>
       </div>
       <div *ngIf="content == 'payments'" id="payments-content">
         {{content}}

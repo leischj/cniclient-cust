@@ -13,6 +13,7 @@ import { CustomMaterialModule } from './core/material.module';
 import { AccountOverviewComponent } from './account-overview/account-overview.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { BalanceComponent } from './balance/balance.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BalanceComponent } from './balance/balance.component';
     LoginComponent,
     AccountOverviewComponent,
     AccountDetailsComponent,
-    BalanceComponent
+    BalanceComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,

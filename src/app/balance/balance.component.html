@@ -12,7 +12,7 @@
     <div class="column2 price">{{customer?.currentDue | currency}}</div>
   </div>
   <div *ngIf="customer.pastDue > 0" class="red">Past due. Please make a payment.</div>
-  <div *ngIf="customer.totalDue == 0">Paid in full. Thank you!</div>
+  <div *ngIf="customer.totalDue <= 0">Paid in full. Thank you!</div>
   <div *ngIf="customer.totalDue > 0">Payment due date: {{customer?.lateDate | date: 'M/dd/yyyy'}}</div>
   <div class="horizontal-flex">
     <button [disabled]="customer.totalDue == 0" (click)="edit()" mat-raised-button color="primary">

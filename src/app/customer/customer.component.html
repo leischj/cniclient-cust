@@ -47,7 +47,7 @@
         <div>Amount Due:</div>
         <div [ngClass]="{'red': customer.pastDue > 0}" class="emphasized price">{{customer?.totalDue | currency}}</div>
         <div *ngIf="customer.pastDue > 0">Past due</div>
-        <div *ngIf="customer.totalDue == 0">Paid - Thank you!</div>
+        <div *ngIf="customer.totalDue <= 0">Paid - Thank you!</div>
         <div *ngIf="customer.pastDue == 0 && customer.totalDue > 0">
           Due {{customer?.lateDate | date: 'M/dd/yyyy'}}</div>
       </div>
@@ -62,7 +62,7 @@
         <app-account-overview [customer]="customer"></app-account-overview>
       </div>
       <div *ngIf="content == 'transactions'" id="transactions-content">
-        {{content}}
+        <app-transactions [customer]="customer"></app-transactions>
       </div>
       <div *ngIf="content == 'bill'" id="bill-content">
         <app-balance [customer]="customer"></app-balance>

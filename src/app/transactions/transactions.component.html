@@ -1,0 +1,32 @@
+<table mat-table [dataSource]="transactions" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="postDate">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.postDate | date: 'MMM-yyyy'}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let element"> {{element.tranDesc}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="amount">
+    <th mat-header-cell *matHeaderCellDef> Amount </th>
+    <td mat-cell *matCellDef="let element"> {{element.amount | number:'1.2-2' }} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="balance">
+    <th mat-header-cell *matHeaderCellDef> New Balance </th>
+    <td mat-cell *matCellDef="let element"> {{element.resultBalance | number:'1.2-2' }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

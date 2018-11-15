@@ -1,0 +1,92 @@
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  margin-left: 10px;
+}
+#header {
+  background-color: #d0d0d0;
+  color: #9a9a9a;
+}
+#main-menu {
+  width: 100px;
+  height: 100vh;
+  background-color: #003366;
+}
+
+#main-page {
+  flex-grow: 1;
+}
+
+#main-content {
+  margin-left: 12px;
+  margin-top: 12px;
+
+}
+.logout {
+  margin-right: 20px;
+}
+.logout:hover {
+  color: blue;
+}
+.icon_action {
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.red {
+  color: red !important;
+}
+#header_bill {
+  width: 150px;
+  text-align: center;
+}
+.emphasized {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555555;
+}
+.bordered {
+  border: 1px #003366 solid;
+}
+.menu-box {
+  height: 60px;
+  color: #aaaaaa;
+  background-color: #004477;
+  border: 1px solid #888888;
+}
+
+.menu-box:hover {
+  color: white;
+}
+.inner-menu {
+  text-align: center;
+  //width: 50%;
+  //margin: 0 auto;
+}
+.spacer-box {
+  height: 100px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+mat-icon {
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+}
+
+.centered {
+  justify-content: center;
+}

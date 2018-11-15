@@ -12,6 +12,7 @@ export class CustomerComponent implements OnInit {
 
   public custNum: number;
   public customer: Customer;
+  public content = 'acct';
 
   constructor(public customerService: CustomerService,
               private route: ActivatedRoute) { }
@@ -27,4 +28,7 @@ export class CustomerComponent implements OnInit {
     });
   }
 
+  view(page: string) {
+    this.content = page;
+  }
 }

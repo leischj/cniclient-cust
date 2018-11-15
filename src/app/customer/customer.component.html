@@ -1,5 +1,84 @@
-<h1>
-  {{customer?.firstName}} {{customer?.lastName}}
-</h1>
 <!-- probably have some tabs on top of page? Account, Transactions, Services, Payments? -->
-<app-account-overview></app-account-overview>
+
+<div class="horizontal-flex">
+  <div id="main-menu" class="vertical-flex">
+    <div class="spacer-box"></div>
+
+      <div class="menu-box icon_action" (click)="view('acct')">
+        <div class="horizontal-flex centered"><mat-icon>account_balance</mat-icon></div>
+        <div class="inner-menu">Account</div>
+      </div>
+      <div class="menu-box icon_action" (click)="view('transactions')">
+        <div class="horizontal-flex centered"><mat-icon>list</mat-icon></div>
+
+        <div class="inner-menu">Transactions</div>
+      </div>
+      <div class="menu-box icon_action" (click)="view('bill')">
+        <div class="horizontal-flex centered"><mat-icon>local_atm</mat-icon></div>
+        <div class="inner-menu">Bill</div>
+      </div>
+      <div class="menu-box icon_action" (click)="view('payments')">
+        <div class="horizontal-flex centered"><mat-icon>payment</mat-icon></div>
+        <div class="inner-menu">Payments</div>
+      </div>
+      <div class="menu-box icon_action" (click)="view('services')">
+        <div class="horizontal-flex centered"><mat-icon>event_available</mat-icon></div>
+        <div class="inner-menu">Services</div>
+      </div>
+      <div class="menu-box icon_action" (click)="view('contact')">
+        <div class="horizontal-flex centered"><mat-icon>contact_support</mat-icon></div>
+        <div class="inner-menu">Contact us</div>
+      </div>
+
+
+  </div>
+  <div id="main-page" class="vertical-flex">
+    <div id="header" class="horizontal-flex spacer-box space-between">
+      <h1>
+        {{customer?.firstName}} {{customer?.lastName}}
+      </h1>
+
+      <div class="vertical-flex centered">
+        <div>{{customer?.billAddress1}}</div>
+        <div *ngIf="customer.billAddress2 != null">{{customer?.billAddress2}}</div>
+        <div>{{customer?.billCity}}, {{customer?.billState}} {{customer.billZip}}</div>
+      </div>
+      <div id="header_bill" class="vertical-flex centered bordered">
+        <div>Amount Due:</div>
+        <div [ngClass]="{'red': customer.pastDue > 0}" class="emphasized">$ {{customer?.totalDue}}</div>
+        <div *ngIf="customer.pastDue > 0">Past due</div>
+        <div *ngIf="customer.totalDue == 0">Paid in full</div>
+        <div *ngIf="customer.pastDue == 0 && customer.totalDue > 0">
+          Due {{customer?.lastDate | date: 'M/dd/yyyy'}}</div>
+      </div>
+      <div class="icon_action logout" (click)="logout()">
+        <div class="horizontal-flex centered"><mat-icon>exit_to_app</mat-icon></div>
+        <div class="inner-menu">Log out</div>
+      </div>
+
+    </div>
+    <div id="main-content">
+      <div *ngIf="content == 'acct'" id="acct-content">
+        {{content}}
+        <app-account-overview></app-account-overview>
+
+      </div>
+      <div *ngIf="content == 'transactions'" id="transactions-content">
+        {{content}}
+      </div>
+      <div *ngIf="content == 'bill'" id="bill-content">
+        {{content}}
+      </div>
+      <div *ngIf="content == 'payments'" id="payments-content">
+        {{content}}
+      </div>
+      <div *ngIf="content == 'services'" id="services-content">
+        {{content}}
+      </div>
+      <div *ngIf="content == 'contact'" id="contact-content">
+        {{content}}
+      </div>
+    </div>
+
+  </div>
+</div>

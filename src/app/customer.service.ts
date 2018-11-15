@@ -15,10 +15,15 @@ export class CustomerService {
     firstName: 'Joe',
     lastName: 'Smith',
     billAddress1: '101 Main St',
+    billAddress2: 'Apt 2A',
     billCity: 'El Paso',
     billState: 'TX',
     billZip: '40353',
     email: 'smith.joe.99999@gmail.com',
+    pastDue: 0,
+    currentDue: 12.45,
+    totalDue: 12.45,
+    lastDate: new Date()
   };
   constructor(public http: HttpClient) { }
 

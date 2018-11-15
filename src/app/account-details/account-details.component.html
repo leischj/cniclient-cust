@@ -1,4 +1,50 @@
-<table mat-table>
-
-
-</table>
+<div class="vertical-flex">
+  <div class="horizontal-flex row">
+    <div class="column1">Customer Number:</div>
+    <div class="column2">{{customer?.custNum}}</div>
+  </div>
+  <div class="horizontal-flex row">
+    <div class="column1">Rt/Acct-Sb:</div>
+    <div class="column2">{{customer?.route}}/{{customer?.account}}-{{customer?.sub}}</div>
+  </div>
+  <div class="horizontal-flex row">
+    <div class="column1">Billing Cycle:</div>
+    <div class="column2">{{customer?.cycle}}</div>
+  </div>
+  <div class="horizontal-flex row">
+    <div class="column1">Billing Status:</div>
+    <div class="column2">{{customer?.status}}</div>
+  </div>
+  <div class="horizontal-flex row">
+    <div class="column1">Name:</div>
+    <div class="column2">{{customer?.firstName}} {{customer?.lastName}}</div>
+  </div>
+  <div class="horizontal-flex row">
+    <div class="column1">Billing Address:</div>
+    <div class="vertical-flex column2">
+      <div>{{customer?.billAddress1}}</div>
+      <div>{{customer?.billAddress2}}</div>
+      <div>{{customer?.billCity}}, {{customer?.billState}} {{customer?.billZip}}</div>
+    </div>
+  </div>
+  <div class="horizontal-flex row">
+    <div class="column1">Service Address:</div>
+    <div class="column2">{{customer?.serviceAddress}}</div>
+  </div>
+  <div class="horizontal-flex row">
+    <div class="column1">Email:</div>
+    <div class="column2">{{customer?.email}}</div>
+  </div>
+  <div class="horizontal-flex row">
+    <div class="column1">Bank Draft:</div>
+    <div class="column2">{{customer?.draftActive === 'Y' ? 'Yes' : 'No'}}</div>
+  </div>
+  <div class="horizontal-flex">
+    <button (click)="edit()" mat-raised-button color="primary">
+      <mat-icon>edit</mat-icon> Edit
+    </button>
+    <button (click)="print()" mat-raised-button color="primary">
+      <mat-icon>print</mat-icon> Print
+    </button>
+  </div>
+</div>

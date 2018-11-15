@@ -20,17 +20,23 @@ export class CustomerService {
     billState: 'TX',
     billZip: '40353',
     email: 'smith.joe.99999@gmail.com',
-    pastDue: 0,
+    pastDue: 30.20,
     currentDue: 0,
-    totalDue: 0,
-    lateDate: new Date()
+    totalDue: 30.20,
+    lateDate: new Date(),
+    route: 2,
+    account: 950,
+    sub: 0,
+    cycle: 1,
+    status: 'A',
+    serviceAddress: '1212 Superior St.'
   };
   constructor(public http: HttpClient) { }
 
   getCustomer(id: number): Observable<Customer> {
     // TODO: Externalize API addresses
-    return of(this.mockCust);
-    // const address = 'http://localhost:25598/api/Customers/' + id;
-    // return this.http.get(address).pipe(map((response: any) => response));
+    //return of(this.mockCust);
+    const address = 'http://localhost:25598/api/Customers/' + id;
+    return this.http.get(address).pipe(map((response: any) => response));
   }
 }

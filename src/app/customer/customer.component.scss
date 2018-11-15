@@ -8,6 +8,10 @@
   flex-direction: row;
 }
 
+.selected {
+  color: white !important;
+}
+
 h1 {
   margin-left: 10px;
 }
@@ -89,4 +93,12 @@ mat-icon {
 
 .centered {
   justify-content: center;
+}
+
+.price {
+  display: inline-block;
+}
+
+.price::first-letter {
+  padding-right: 0.3em;
 }

@@ -4,28 +4,28 @@
   <div id="main-menu" class="vertical-flex">
     <div class="spacer-box"></div>
 
-      <div class="menu-box icon_action" (click)="view('acct')">
+      <div [ngClass]="{'selected': content == 'acct'}" class="menu-box icon_action" (click)="view('acct')">
         <div class="horizontal-flex centered"><mat-icon>account_balance</mat-icon></div>
         <div class="inner-menu">Account</div>
       </div>
-      <div class="menu-box icon_action" (click)="view('transactions')">
+      <div [ngClass]="{'selected': content == 'transactions'}" class="menu-box icon_action" (click)="view('transactions')">
         <div class="horizontal-flex centered"><mat-icon>list</mat-icon></div>
 
         <div class="inner-menu">Transactions</div>
       </div>
-      <div class="menu-box icon_action" (click)="view('bill')">
+      <div [ngClass]="{'selected': content == 'bill'}" class="menu-box icon_action" (click)="view('bill')">
         <div class="horizontal-flex centered"><mat-icon>local_atm</mat-icon></div>
         <div class="inner-menu">Bill</div>
       </div>
-      <div class="menu-box icon_action" (click)="view('payments')">
+      <div [ngClass]="{'selected': content == 'payments'}" class="menu-box icon_action" (click)="view('payments')">
         <div class="horizontal-flex centered"><mat-icon>payment</mat-icon></div>
         <div class="inner-menu">Payments</div>
       </div>
-      <div class="menu-box icon_action" (click)="view('services')">
+      <div [ngClass]="{'selected': content == 'services'}" class="menu-box icon_action" (click)="view('services')">
         <div class="horizontal-flex centered"><mat-icon>event_available</mat-icon></div>
         <div class="inner-menu">Services</div>
       </div>
-      <div class="menu-box icon_action" (click)="view('contact')">
+      <div [ngClass]="{'selected': content == 'contact'}" class="menu-box icon_action" (click)="view('contact')">
         <div class="horizontal-flex centered"><mat-icon>contact_support</mat-icon></div>
         <div class="inner-menu">Contact us</div>
       </div>
@@ -45,7 +45,7 @@
       </div>
       <div id="header_bill" class="vertical-flex centered bordered">
         <div>Amount Due:</div>
-        <div [ngClass]="{'red': customer.pastDue > 0}" class="emphasized">$ {{customer?.totalDue}}</div>
+        <div [ngClass]="{'red': customer.pastDue > 0}" class="emphasized price">{{customer?.totalDue | currency}}</div>
         <div *ngIf="customer.pastDue > 0">Past due</div>
         <div *ngIf="customer.totalDue == 0">Paid - Thank you!</div>
         <div *ngIf="customer.pastDue == 0 && customer.totalDue > 0">
@@ -65,7 +65,7 @@
         {{content}}
       </div>
       <div *ngIf="content == 'bill'" id="bill-content">
-        <app-balance></app-balance>
+        <app-balance [customer]="customer"></app-balance>
       </div>
       <div *ngIf="content == 'payments'" id="payments-content">
         {{content}}

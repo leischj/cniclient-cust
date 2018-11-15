@@ -1,3 +1,22 @@
-<p>
-  balance works!
-</p>
+<div class="vertical-flex">
+  <div class="horizontal-flex row header-row">
+    <div class="column1">Account balance:</div>
+    <div class="column2 price">{{customer?.totalDue | currency}}</div>
+  </div>
+  <div class="horizontal-flex row">
+    <div class="column1">Past due charges:</div>
+    <div [ngClass]="{'red': customer.pastDue > 0}" class="column2 price">{{customer?.pastDue | currency}}</div>
+  </div>
+  <div class="horizontal-flex row">
+    <div class="column1">Current charges:</div>
+    <div class="column2 price">{{customer?.currentDue | currency}}</div>
+  </div>
+  <div *ngIf="customer.pastDue > 0" class="red">Past due. Please make a payment.</div>
+  <div *ngIf="customer.totalDue == 0">Paid in full. Thank you!</div>
+  <div *ngIf="customer.totalDue > 0">Payment due date: {{customer?.lateDate | date: 'M/dd/yyyy'}}</div>
+  <div class="horizontal-flex">
+    <button [disabled]="customer.totalDue == 0" (click)="edit()" mat-raised-button color="primary">
+      <mat-icon>payment</mat-icon> Make a Payment
+    </button>
+  </div>
+</div>

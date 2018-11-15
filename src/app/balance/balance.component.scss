@@ -1,0 +1,44 @@
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.column1 {
+  width: 200px;
+  color: #004477;
+}
+
+.column2 {
+  width: 400px;
+}
+
+.row {
+  margin-bottom: 8px;
+}
+
+button {
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+.header-row {
+  font-size: 150%;
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+}
+
+.price {
+  display: inline-block;
+}
+
+.price::first-letter {
+  padding-right: 0.3em;
+}

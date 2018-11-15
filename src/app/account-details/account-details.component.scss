@@ -1,0 +1,26 @@
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.column1 {
+  width: 200px;
+  color: #003366;
+}
+
+.column2 {
+  width: 400px;
+}
+
+.row {
+  margin-bottom: 8px;
+}
+
+button {
+  margin-right: 15px;
+}

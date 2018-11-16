@@ -15,7 +15,7 @@
   <!-- Position Column -->
   <ng-container matColumnDef="date">
     <th mat-header-cell *matHeaderCellDef> Date </th>
-    <td mat-cell *matCellDef="let element"> {{element.createDate | date: 'MMM-yyyy'}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.createDate | date: 'M/dd/yyyy'}} </td>
   </ng-container>
 
   <!-- Name Column -->
@@ -32,12 +32,12 @@
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="status">
-    <th mat-header-cell *matHeaderCellDef> New Balance </th>
-    <td mat-cell *matCellDef="let element"> {{element.status }} </td>
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element">  {{getStatus(element.status) }} </td>
   </ng-container>
 
   <ng-container matColumnDef="amount">
-    <th mat-header-cell *matHeaderCellDef> New Balance </th>
+    <th mat-header-cell *matHeaderCellDef> Amount </th>
     <td mat-cell *matCellDef="let element"> {{element.pmtAmount | number:'1.2-2' }} </td>
   </ng-container>
 

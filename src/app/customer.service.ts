@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Customer } from './model/customer';
 import { of } from 'rxjs';
 import {Transaction} from './model/transaction';
+import { PaymentEntry } from './model/paymentEntry';
 
 @Injectable({
   providedIn: 'root'
@@ -55,6 +56,11 @@ export class CustomerService {
     }];
     // return of(trans);
     const address = 'http://localhost:25598/api/Customers/' + custNum + '/transactions';
+    return this.http.get(address).pipe(map((response: any) => response));
+  }
+
+  getPayments(custNum: number): Observable<PaymentEntry[]> {
+    const address = 'http://localhost:25598/api/Customers/' + custNum + '/payments';
     return this.http.get(address).pipe(map((response: any) => response));
   }
 }

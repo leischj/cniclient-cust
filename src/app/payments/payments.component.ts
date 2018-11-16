@@ -22,6 +22,16 @@ export class PaymentsComponent implements OnInit {
     });
   }
 
+  getStatus(status: number): string {
+    if (status === 1) {
+      return 'Confirmed';
+    } else if (status === 3) {
+      return 'Exported';
+    } else if (status === 99) {
+      return 'Error';
+    }
+    return '';
+  }
   print() {
     alert('This feature is coming soon!');
   }

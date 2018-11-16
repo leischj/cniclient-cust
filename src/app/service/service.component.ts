@@ -12,7 +12,7 @@ import {Service} from '../model/service';
 export class ServiceComponent implements OnInit {
   @Input() customer: Customer;
   services: Service[];
-  displayedColumns: string[] = ['description', 'status', 'deposit-date', 'deposit-amount'];
+  displayedColumns: string[] = ['description', 'status', 'deposit-date', 'deposit-amount', 'readings'];
 
   constructor(public customerService: CustomerService) { }
 

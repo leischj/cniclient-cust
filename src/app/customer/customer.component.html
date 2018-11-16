@@ -68,7 +68,7 @@
         <app-balance [customer]="customer"></app-balance>
       </div>
       <div *ngIf="content == 'payments'" id="payments-content">
-        {{content}}
+        <app-payments [customer]="customer"></app-payments>
       </div>
       <div *ngIf="content == 'services'" id="services-content">
         {{content}}

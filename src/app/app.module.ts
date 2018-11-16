@@ -15,6 +15,7 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
 import { BalanceComponent } from './balance/balance.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { PaymentsComponent } from './payments/payments.component';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PaymentsComponent } from './payments/payments.component';
     AccountDetailsComponent,
     BalanceComponent,
     TransactionsComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,

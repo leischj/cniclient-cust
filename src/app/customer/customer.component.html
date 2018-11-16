@@ -71,10 +71,10 @@
         <app-payments [customer]="customer"></app-payments>
       </div>
       <div *ngIf="content == 'services'" id="services-content">
-        {{content}}
+        <app-service [customer]="customer"></app-service>
       </div>
       <div *ngIf="content == 'contact'" id="contact-content">
-        {{content}}
+        This feature is coming soon!
       </div>
     </div>
 

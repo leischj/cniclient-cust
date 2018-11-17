@@ -16,6 +16,10 @@ import { BalanceComponent } from './balance/balance.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { ServiceComponent } from './service/service.component';
+import { OverviewComponent } from './csr/overview/overview.component';
+import { CustomersComponent } from './csr/customers/customers.component';
+import { BillingComponent } from './csr/billing/billing.component';
+import { UsageComponent } from './csr/usage/usage.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { ServiceComponent } from './service/service.component';
     BalanceComponent,
     TransactionsComponent,
     PaymentsComponent,
-    ServiceComponent
+    ServiceComponent,
+    OverviewComponent,
+    CustomersComponent,
+    BillingComponent,
+    UsageComponent
   ],
   imports: [
     BrowserModule,

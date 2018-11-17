@@ -7,66 +7,51 @@ import { of } from 'rxjs';
 import {Transaction} from './model/transaction';
 import { PaymentEntry } from './model/paymentEntry';
 import {Service} from './model/service';
+import {CustomerStats} from './model/customer-stats';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
+  protected address = 'http://localhost:25598/api/Customers/';
 
-  // public mockCust: Customer = {
-  //   custNum: 11,
-  //   firstName: 'Joe',
-  //   lastName: 'Smith',
-  //   billAddress1: '101 Main St',
-  //   billAddress2: 'Apt 2A',
-  //   billCity: 'El Paso',
-  //   billState: 'TX',
-  //   billZip: '40353',
-  //   email: 'smith.joe.99999@gmail.com',
-  //   pastDue: 30.20,
-  //   currentDue: 0,
-  //   totalDue: 30.20,
-  //   lateDate: new Date(),
-  //   route: 2,
-  //   account: 950,
-  //   sub: 0,
-  //   cycle: 1,
-  //   status: 'A',
-  //   serviceAddress: '1212 Superior St.'
-  // };
   constructor(public http: HttpClient) { }
 
   getCustomer(id: number): Observable<Customer> {
-    // TODO: Externalize API addresses
-    // return of(this.mockCust);
-    const address = 'http://localhost:25598/api/Customers/' + id;
+    const address = this.address + id;
     return this.http.get(address).pipe(map((response: any) => response));
   }
 
   getTransactions(custNum: number): Observable<Transaction[]> {
-    // const trans: Transaction[] = [{
-    //   histId: 5, custNum: 11,
-    //   amount: -37.50, isBudget: false, resultBalance: 12.50,
-    //   postDate: new Date(), tranCount: 2, tranDesc: 'Payment - thank you',
-    //   tranSource: 'CC', resultBudget: 0
-    // }, {
-    //   histId: 4, custNum: 11,
-    //   amount: 50, isBudget: false, resultBalance: 50,
-    //   postDate: new Date(), tranCount: 2, tranDesc: 'Bill',
-    //   tranSource: 'PP', resultBudget: 0
-    // }];
-    // return of(trans);
-    const address = 'http://localhost:25598/api/Customers/' + custNum + '/transactions';
+    const address = this.address + custNum + '/transactions';
     return this.http.get(address).pipe(map((response: any) => response));
   }
 
   getPayments(custNum: number): Observable<PaymentEntry[]> {
-    const address = 'http://localhost:25598/api/Customers/' + custNum + '/payments';
+    const address = this.address + custNum + '/payments';
     return this.http.get(address).pipe(map((response: any) => response));
   }
 
   getServices(custNum: number): Observable<Service[]> {
-    const address = 'http://localhost:25598/api/Customers/' + custNum + '/services';
+    const address = this.address + custNum + '/services';
     return this.http.get(address).pipe(map((response: any) => response));
+  }
+
+  getCustomerStats(): Observable<CustomerStats> {
+    const ret: CustomerStats = {
+      total: 14074,
+      active: 14074,
+      withEmail: 5,
+      withBudgetPayments: 0,
+      withBankDraft: 1769,
+      paidInFull: 4888,
+      pastDue: 1503,
+      currentDue: 8873,
+      totalPastDue: 191986.81999999977,
+      averagePastDue: 127.73574184963391
+    };
+    return of(ret);
+    // const address = this.address + 'stats';
+    // return this.http.get(address).pipe(map((response: any) => response));
   }
 }

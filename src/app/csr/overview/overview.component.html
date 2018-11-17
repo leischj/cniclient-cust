@@ -1,0 +1,46 @@
+<!-- probably have some tabs on top of page? Account, Transactions, Services, Payments? -->
+
+<div class="horizontal-flex">
+  <div id="main-menu" class="vertical-flex">
+    <div class="spacer-box"></div>
+
+    <div [ngClass]="{'selected': content == 'customers'}" class="menu-box icon_action" (click)="view('customers')">
+      <div class="horizontal-flex centered"><mat-icon>people</mat-icon></div>
+      <div class="inner-menu">Customers</div>
+    </div>
+    <div [ngClass]="{'selected': content == 'billing'}" class="menu-box icon_action" (click)="view('billing')">
+      <div class="horizontal-flex centered"><mat-icon>local_atm</mat-icon></div>
+
+      <div class="inner-menu">Billing</div>
+    </div>
+    <div [ngClass]="{'selected': content == 'usage'}" class="menu-box icon_action" (click)="view('usage')">
+      <div class="horizontal-flex centered"><mat-icon>power</mat-icon></div>
+      <div class="inner-menu">Usage</div>
+    </div>
+  </div>
+  <div id="main-page" class="vertical-flex">
+    <div id="header" class="horizontal-flex spacer-box space-between">
+      <h1>
+        CSR Portal
+      </h1>
+
+      <div class="icon_action logout" (click)="logout()">
+        <div class="horizontal-flex centered"><mat-icon>exit_to_app</mat-icon></div>
+        <div class="inner-menu">Log out</div>
+      </div>
+
+    </div>
+    <div id="main-content">
+      <div *ngIf="content == 'customers'" id="customers-content">
+        <app-customers [stats]="stats"></app-customers>
+      </div>
+      <div *ngIf="content == 'billing'" id="billing-content">
+        <app-billing [stats]="stats"></app-billing>
+      </div>
+      <div *ngIf="content == 'usage'" id="usage-content">
+        <app-usage [stats]="stats"></app-usage>
+      </div>
+    </div>
+
+  </div>
+</div>

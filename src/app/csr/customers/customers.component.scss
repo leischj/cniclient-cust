@@ -1,0 +1,28 @@
+.pie-container {
+  width:300px;
+  height:250px;
+}
+
+.centered {
+  justify-content: center;
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  margin-left: 20px;
+  font-weight: bold;
+  color: #555555;
+}
+
+app-pie-chart {
+  margin-left: 20px;
+}

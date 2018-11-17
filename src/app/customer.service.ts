@@ -40,9 +40,9 @@ export class CustomerService {
   getCustomerStats(): Observable<CustomerStats> {
     const ret: CustomerStats = {
       total: 14074,
-      active: 14074,
-      withEmail: 5,
-      withBudgetPayments: 0,
+      active: 10000,
+      withEmail: 7432,
+      withBudgetPayments: 385,
       withBankDraft: 1769,
       paidInFull: 4888,
       pastDue: 1503,
@@ -54,4 +54,15 @@ export class CustomerService {
     // const address = this.address + 'stats';
     // return this.http.get(address).pipe(map((response: any) => response));
   }
+
+  getRoutes(): Observable<number[]> {
+    const address = this.address + '/routes';
+    return this.http.get(address).pipe(map((response: any) => response));
+  }
+
+  getBillingCycles(): Observable<number[]> {
+    const address = this.address + '/routes';
+    return this.http.get(address).pipe(map((response: any) => response));
+  }
+
 }

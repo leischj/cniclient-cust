@@ -20,6 +20,7 @@ import { OverviewComponent } from './csr/overview/overview.component';
 import { CustomersComponent } from './csr/customers/customers.component';
 import { BillingComponent } from './csr/billing/billing.component';
 import { UsageComponent } from './csr/usage/usage.component';
+import { PieChartComponent } from './csr/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UsageComponent } from './csr/usage/usage.component';
     OverviewComponent,
     CustomersComponent,
     BillingComponent,
-    UsageComponent
+    UsageComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,

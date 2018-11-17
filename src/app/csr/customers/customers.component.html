@@ -1,3 +1,33 @@
-<p>
-  customers works!
-</p>
+<div class="vertical-flex">
+  <div class="horizontal-flex">
+    <div class="pie-container vertical-flex">
+      <div class="title" >All customers</div>
+      <app-pie-chart pieChartID="all-customers" [data]="customersTotalData"></app-pie-chart>
+    </div>
+    <div class="pie-container vertical-flex">
+      <div class="title" >For route</div>
+        <app-pie-chart pieChartID="for-route" [data]="byRoute"></app-pie-chart>
+    </div>
+    <div class="pie-container vertical-flex">
+      <div class="title" >For billing cycle</div>
+        <app-pie-chart pieChartID="billing-cycle" [data]="byBillingCycle"></app-pie-chart>
+    </div>
+  </div>
+  <div class="horizontal-flex">
+    <div class="pie-container vertical-flex">
+      <div class="title" >With email</div>
+        <app-pie-chart pieChartID="has-email" [data]="withEmail"></app-pie-chart>
+    </div>
+    <div class="pie-container vertical-flex">
+      <div class="title" >With budget payments</div>
+        <app-pie-chart pieChartID="budget-payments" [data]="withBudgetPayments"></app-pie-chart>
+    </div>
+    <div class="pie-container vertical-flex">
+      <div class="title" >With active bank drafts</div>
+        <app-pie-chart pieChartID="bank-drafts" [data]="withActiveBankDrafts"></app-pie-chart>
+    </div>
+  </div>
+  <div class="horizontal-flex">
+      <!-- City and state bar graphs go here. -->
+  </div>
+</div>

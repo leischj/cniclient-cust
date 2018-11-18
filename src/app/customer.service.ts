@@ -40,7 +40,7 @@ export class CustomerService {
   }
 
   getCustomerStats(): Observable<CustomerStats> {
-    const ret: CustomerStats = {
+    /*const ret: CustomerStats = {
       total: 14074,
       active: 10000,
       withEmail: 7432,
@@ -53,9 +53,9 @@ export class CustomerService {
       averagePastDue: 127.73574184963391,
       errorPayments: 345
     };
-    return of(ret);
-    // const address = this.address + 'stats';
-    // return this.http.get(address).pipe(map((response: any) => response));
+    return of(ret); */
+    const address = this.address + 'stats';
+    return this.http.get(address).pipe(map((response: any) => response));
   }
 
   getRoutes(): Observable<number[]> {

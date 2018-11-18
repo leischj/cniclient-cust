@@ -26,14 +26,14 @@ export class CustomersComponent implements OnInit {
     this.customersTotalData.push({label: 'Active', value: this.stats.active});
     this.customersTotalData.push({label: 'Inactive', value: this.stats.total - this.stats.active});
 
-    this.withEmail.push({label: 'Has email', value: this.stats.withEmail});
-    this.withEmail.push({label: 'No email', value: this.stats.total - this.stats.withEmail});
+    this.withEmail.push({label: 'Yes', value: this.stats.withEmail});
+    this.withEmail.push({label: 'No', value: this.stats.total - this.stats.withEmail});
 
-    this.withBudgetPayments.push({label: 'Budget payments', value: this.stats.withBudgetPayments});
-    this.withBudgetPayments.push({label: 'No budget payments', value: this.stats.total - this.stats.withBudgetPayments});
+    this.withBudgetPayments.push({label: 'Yes', value: this.stats.withBudgetPayments});
+    this.withBudgetPayments.push({label: 'No', value: this.stats.total - this.stats.withBudgetPayments});
 
-    this.withActiveBankDrafts.push({label: 'Bank draft active', value: this.stats.withBankDraft});
-    this.withActiveBankDrafts.push({label: 'No bank draft active', value: this.stats.total - this.stats.withBankDraft});
+    this.withActiveBankDrafts.push({label: 'Yes', value: this.stats.withBankDraft});
+    this.withActiveBankDrafts.push({label: 'No', value: this.stats.total - this.stats.withBankDraft});
 
   }
 

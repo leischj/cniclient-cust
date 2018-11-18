@@ -48,7 +48,8 @@ export class CustomerService {
       pastDue: 1503,
       currentDue: 8873,
       totalPastDue: 191986.81999999977,
-      averagePastDue: 127.73574184963391
+      averagePastDue: 127.73574184963391,
+      errorPayments: 345
     };
     return of(ret);
     // const address = this.address + 'stats';

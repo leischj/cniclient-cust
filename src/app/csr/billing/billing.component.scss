@@ -1,0 +1,31 @@
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.column1 {
+  width: 200px;
+  color: #003366;
+}
+
+.column2 {
+  width: 150px;
+}
+
+.row {
+  margin-bottom: 8px;
+}
+
+
+.price {
+  display: inline-block;
+}
+
+.price::first-letter {
+  padding-right: 0.3em;
+}

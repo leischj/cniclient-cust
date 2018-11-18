@@ -11,4 +11,5 @@ export interface CustomerStats {
   currentDue: number;
   totalPastDue: number;
   averagePastDue: number;
+  errorPayments: number;
 }

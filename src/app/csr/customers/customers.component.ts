@@ -1,4 +1,4 @@
-import { Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {CustomerStats} from '../../model/customer-stats';
 
 export interface PieData {
@@ -10,7 +10,7 @@ export interface PieData {
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.scss']
 })
-export class CustomersComponent implements OnInit {
+export class CustomersComponent implements AfterViewInit {
   private customersTotalData: PieData[] = [];
   private  byRoute: PieData[] = [];
   private byBillingCycle: PieData[] = [];
@@ -22,7 +22,7 @@ export class CustomersComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.customersTotalData.push({label: 'Active', value: this.stats.active});
     this.customersTotalData.push({label: 'Inactive', value: this.stats.total - this.stats.active});
 

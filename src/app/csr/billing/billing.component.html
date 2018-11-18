@@ -23,10 +23,10 @@
     </div>
   </div>
   <div class="vertical-flex">
-    <h3>Payments by month</h3>
-    <div class="horizontal-flex row">
-      <div class="column1">&nbsp;</div>
-      <div class="column2">&nbsp;</div>
+    <h3>Payments - last 12 months</h3>
+    <div class="horizontal-flex row" *ngFor="let p of paymentsLast12">
+      <div class="column1-sm">{{p.key}}</div>
+      <div class="column2">{{p.value | currency}}</div>
     </div>
   </div>
   <div class="vertical-flex">

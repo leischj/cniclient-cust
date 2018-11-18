@@ -3,6 +3,7 @@ import {CustomerStats} from '../../model/customer-stats';
 import {PieData} from '../customers/customers.component';
 import {CustomerService} from '../../customer.service';
 import {ServiceUsage} from '../../model/service-usage';
+import {KeyValue} from '@angular/common';
 
 @Component({
   selector: 'app-billing',
@@ -13,6 +14,7 @@ export class BillingComponent implements OnInit {
   @Input() stats: CustomerStats;
   serviceUsage: ServiceUsage[];
   paymentData: PieData[] = [];
+  paymentsLast12: KeyValue<string, string>[];
 
   constructor(public customerService: CustomerService) { }
 
@@ -23,6 +25,10 @@ export class BillingComponent implements OnInit {
 
     this.customerService.getServiceUsage().subscribe((usage: ServiceUsage[]) => {
       this.serviceUsage = usage;
+    });
+
+    this.customerService.getPaymentsLast12.subscribe((payments: KeyValue<string, string>[]) => {
+      this.paymentsLast12 = payments;
     });
   }
 

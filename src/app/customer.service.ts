@@ -9,6 +9,7 @@ import { PaymentEntry } from './model/paymentEntry';
 import {Service} from './model/service';
 import {CustomerStats} from './model/customer-stats';
 import {ServiceUsage} from './model/service-usage';
+import {KeyValue} from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -69,6 +70,11 @@ export class CustomerService {
 
   getServiceUsage(): Observable<ServiceUsage[]> {
     const address = this.address + '/service-deposits';
+    return this.http.get(address).pipe(map((response: any) => response));
+  }
+
+  getPaymentsLast12(): Observable<KeyValue<string, string> > {
+    const address = this.address + '/payments-last-12-months';
     return this.http.get(address).pipe(map((response: any) => response));
   }
 }

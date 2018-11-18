@@ -31,9 +31,10 @@
   </div>
   <div class="vertical-flex">
     <h3>Deposits by service</h3>
-    <div class="horizontal-flex row">
-      <div class="column1">&nbsp;</div>
-      <div class="column2">&nbsp;</div>
+    <div class="horizontal-flex row" *ngFor="let su of serviceUsage">
+      <div class="column1">{{su.serviceType}}</div>
+      <div class="column2">{{su.count}}</div>
+      <div class="column3">{{su.depositAmount}}</div>
     </div>
   </div>
 </div>

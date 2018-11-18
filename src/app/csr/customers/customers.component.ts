@@ -1,4 +1,4 @@
-import { Component, Input, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import {CustomerStats} from '../../model/customer-stats';
 
 export interface PieData {

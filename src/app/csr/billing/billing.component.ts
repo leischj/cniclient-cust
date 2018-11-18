@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CustomerStats} from '../../model/customer-stats';
 import {PieData} from '../customers/customers.component';
+import {CustomerService} from '../../customer.service';
+import {ServiceUsage} from '../../model/service-usage';
 
 @Component({
   selector: 'app-billing',
@@ -9,15 +11,19 @@ import {PieData} from '../customers/customers.component';
 })
 export class BillingComponent implements OnInit {
   @Input() stats: CustomerStats;
-
+  serviceUsage: ServiceUsage[];
   paymentData: PieData[] = [];
 
-  constructor() { }
+  constructor(public customerService: CustomerService) { }
 
   ngOnInit() {
     this.paymentData.push({label: 'Paid in full', value: this.stats.paidInFull});
     this.paymentData.push({label: 'Current due', value: this.stats.currentDue});
     this.paymentData.push({label: 'Past due', value: this.stats.pastDue});
+
+    this.customerService.getServiceUsage().subscribe((usage: ServiceUsage[]) => {
+      this.serviceUsage = usage;
+    });
   }
 
 }

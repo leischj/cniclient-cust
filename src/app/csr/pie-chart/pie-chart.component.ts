@@ -58,7 +58,7 @@ export class PieChartComponent implements AfterViewInit {
       .append('g')
       .append('path')
       .attr('d', arc)
-      .attr('fill', (d, i) => pieColor(i))
+      .attr('fill', (d, i: any) => pieColor(i))
       .style('opacity', opacity)
       .style('stroke', 'white')
       .on('mouseover', function(d) {
@@ -80,13 +80,13 @@ export class PieChartComponent implements AfterViewInit {
           .attr('text-anchor', 'middle');
 
         const text = g1.select('text');
-        const bbox = text.node().getBBox();
+        const bbox = (text.node() as any).getBBox();
         const padding = 2;
         g1.insert('rect', 'text')
           .attr('x', bbox.x - padding)
           .attr('y', bbox.y - padding)
-          .attr('width', bbox.width + (padding*2))
-          .attr('height', bbox.height + (padding*2))
+          .attr('width', bbox.width + (padding * 2))
+          .attr('height', bbox.height + (padding * 2))
           .style('fill', 'white')
           .style('opacity', 0.75);
       })
@@ -98,8 +98,8 @@ export class PieChartComponent implements AfterViewInit {
         let y = mousePosition[1] + height / 2 - tooltipMargin;
 
         let text = D3.select('#' + that.pieChartID + ' .tooltip text');
-        let bbox = text.node().getBBox();
-        if(x - bbox.width / 2 < 0) {
+        let bbox = (text.node() as any).getBBox();
+        if (x - bbox.width / 2 < 0) {
           x = bbox.width / 2;
         } else if (width - x - bbox.width / 2 < 0) {
           x = width - bbox.width / 2;
@@ -145,7 +145,7 @@ export class PieChartComponent implements AfterViewInit {
       .style('height', '10px')
       .style('width', '10px')
       .style('margin', '5px 5px')
-      .style('background-color', (d, i) => pieColor(i));
+      .style('background-color', (d, i: any) => pieColor(i));
 
     keys.append('div')
       .attr('class', 'name')

@@ -8,6 +8,7 @@ import {Transaction} from './model/transaction';
 import { PaymentEntry } from './model/paymentEntry';
 import {Service} from './model/service';
 import {CustomerStats} from './model/customer-stats';
+import {ServiceUsage} from './model/service-usage';
 
 @Injectable({
   providedIn: 'root'
@@ -66,4 +67,8 @@ export class CustomerService {
     return this.http.get(address).pipe(map((response: any) => response));
   }
 
+  getServiceUsage(): Observable<ServiceUsage[]> {
+    const address = this.address + '/service-deposits';
+    return this.http.get(address).pipe(map((response: any) => response));
+  }
 }

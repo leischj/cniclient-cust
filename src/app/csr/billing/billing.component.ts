@@ -27,7 +27,7 @@ export class BillingComponent implements OnInit {
       this.serviceUsage = usage;
     });
 
-    this.customerService.getPaymentsLast12.subscribe((payments: KeyValue<string, string>[]) => {
+    this.customerService.getPaymentsLast12().subscribe((payments: KeyValue<string, string>[]) => {
       this.paymentsLast12 = payments;
     });
   }

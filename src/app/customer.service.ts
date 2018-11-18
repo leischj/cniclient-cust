@@ -73,7 +73,7 @@ export class CustomerService {
     return this.http.get(address).pipe(map((response: any) => response));
   }
 
-  getPaymentsLast12(): Observable<KeyValue<string, string> > {
+  getPaymentsLast12(): Observable<KeyValue<string, string>[] > {
     const address = this.address + '/payments-last-12-months';
     return this.http.get(address).pipe(map((response: any) => response));
   }

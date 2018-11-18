@@ -10,7 +10,7 @@ export interface PieData {
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.scss']
 })
-export class CustomersComponent implements AfterViewInit {
+export class CustomersComponent implements OnInit {
   private customersTotalData: PieData[] = [];
   private  byRoute: PieData[] = [];
   private byBillingCycle: PieData[] = [];
@@ -22,7 +22,7 @@ export class CustomersComponent implements AfterViewInit {
 
   constructor() { }
 
-  ngAfterViewInit() {
+  ngOnInit() {
     this.customersTotalData.push({label: 'Active', value: this.stats.active});
     this.customersTotalData.push({label: 'Inactive', value: this.stats.total - this.stats.active});
 

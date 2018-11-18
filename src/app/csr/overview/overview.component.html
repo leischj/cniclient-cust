@@ -32,13 +32,13 @@
     </div>
     <div id="main-content">
       <div *ngIf="content == 'customers'" id="customers-content">
-        <app-customers [stats]="stats"></app-customers>
+        <app-customers *ngIf="stats" [stats]="stats"></app-customers>
       </div>
       <div *ngIf="content == 'billing'" id="billing-content">
-        <app-billing [stats]="stats"></app-billing>
+        <app-billing  *ngIf="stats" [stats]="stats"></app-billing>
       </div>
       <div *ngIf="content == 'usage'" id="usage-content">
-        <app-usage [stats]="stats"></app-usage>
+        <app-usage *ngIf="stats"  [stats]="stats"></app-usage>
       </div>
     </div>
 

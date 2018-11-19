@@ -24,6 +24,10 @@
   </div>
   <div class="vertical-flex">
     <h3>Payments - last 12 months</h3>
+    <div class="horizontal-flex row">
+      <div class="column1">Date</div>
+      <div class="column2-sm">Payments</div>
+    </div>
     <div class="horizontal-flex row" *ngFor="let p of paymentsLast12">
       <div class="column1">{{p.key}}</div>
       <div class="column2 price">{{p.value | currency}}</div>
@@ -31,6 +35,12 @@
   </div>
   <div class="vertical-flex">
     <h3>Deposits by service</h3>
+
+    <div class="horizontal-flex row">
+      <div class="column1-sm">Service</div>
+      <div class="column2-sm">Deposits</div>
+      <div class="column3-sm">Amount</div>
+    </div>
     <div class="horizontal-flex row" *ngFor="let su of serviceUsage">
       <div class="column1-sm">{{su.serviceType}}</div>
       <div class="column2-sm">{{su.count}}</div>
